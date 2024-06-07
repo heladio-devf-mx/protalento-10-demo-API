@@ -21,6 +21,7 @@
   - ```"type": "module",```
 
 ### Crea el archivo principal (script) ```server.js``` para levantar un server básico d ela aplicación.
+```
   - Escribir el código para tener listo mi servidor.
   // 1. Llamar la biblioteca express y cors
   const express = require("express");
@@ -51,7 +52,7 @@
   app.listen(PORT, () => {
     console.log("Servidor corriendo en el puerto 3000");
   });
-
+```
 ### Configura scripts "dev" para arrancar el proyecto y "start" para producción. El plugin "standard" para eslint (es opcional).
 ### Scripts usados en package.json:
   ```
