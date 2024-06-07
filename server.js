@@ -4,13 +4,15 @@ const cors = require("cors");
 // 1.1 Importar dotenv para leer valriables de entorno
 const dotenv = require("dotenv");
 dotenv.config(); // Configurar dotenv
+// 1.3 Inportar la configuración de la BD
+const db = require("./config/database");
 
-// 1.2 Declaración del Puerto para mi aplicación Backend
+
+// Declaración del Puerto para mi aplicación Backend
 const PORT = process.env.PORT || 3000;
 
 // 2. Crear una instancia de express para mi aplicación
 const app = express();
-
 
 // 2.1 configuración de mi aplicación
 app.use(cors());  // poder dar acceso a otras aplicaciones (react)
@@ -23,7 +25,10 @@ app.get("/", (request, response) => {
   response.status(200).send({ message: `Hola alumnos de protalento!` });
 });
 
-// 4. Lanzar/Levantar el servidor
+// 4. Conectar con la Base de Datos
+db.connect();
+
+// 5. Lanzar/Levantar el servidor
 app.listen(PORT, () => {
   console.log("Servidor corriendo en el puerto: " + PORT);
 });

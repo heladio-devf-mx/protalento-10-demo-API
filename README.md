@@ -64,8 +64,19 @@
   ```
 
 ### Probar el server con el comando
-  - npm run dev
-  - npm run start
+  - ```npm run dev```
+  - ```npm run start```
 
 ### Primer commit.
 ### Crear repositorio en Github y Subir mi proyecto.
+
+## Configurar el acceso a la BD
+1. Crear carpeta ```config``` y adentro el archivo ```database.js```
+con el contenido necesario.
+2. Actualizar en el archivo ```.env``` la variable de la BD llamada:
+  - DB_URL
+  Se verá algo similar a:
+  ```DB_URL=mongodb+srv://USUARIO:PASSWORD@clusterprotalento.q1xzhhj.mongodb.net/NOMBRE_BD?retryWrites=true&w=majority&appName=ClusterProtalento```
+3. Hacer la conexión con la BD desde el server.
+4. Probar con el comando de ejecución de la aplicación ```npm run dev```
+  Deberá imprimir el mensaje "Base de datos conectada exitosamente!" o similar... 
