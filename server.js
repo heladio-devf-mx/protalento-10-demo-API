@@ -6,7 +6,8 @@ const dotenv = require("dotenv");
 dotenv.config(); // Configurar dotenv
 // 1.3 Inportar la configuración de la BD
 const db = require("./config/database");
-
+// 1.4 Importar las rutas
+const moviesRoutes = require("./routes/MoviesRoutes");
 
 // Declaración del Puerto para mi aplicación Backend
 const PORT = process.env.PORT || 3000;
@@ -24,6 +25,8 @@ app.get("/", (request, response) => {
   // request es un objeto que contiene la información de la petición
   response.status(200).send({ message: `Hola alumnos de protalento!` });
 });
+// 3.1 Rutas de las películas
+app.use('/api/v1', moviesRoutes);
 
 // 4. Conectar con la Base de Datos
 db.connect();

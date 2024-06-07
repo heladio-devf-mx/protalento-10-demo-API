@@ -81,3 +81,22 @@ con el contenido necesario.
 4. Probar con el comando de ejecución de la aplicación ```npm run dev```
   Deberá imprimir el mensaje "Base de datos conectada exitosamente!" o similar... 
 5. Detener aplicación /servidor es con ```Ctrl + C```.
+
+## Crear Rutas para el CRUD de mi recurso(movies) del API.
+1. Crear carpeta ```routes``` y adentro el archivo correspondiente ```MoviesRoutes.js```
+con el contenido necesario.
+## Crear Controladores para el CRUD de mi recurso(movies) del API.
+1. Crear carpeta ```controllers``` y adentro el archivo ```MoviesControllers.js```
+con el contenido necesario.
+#### Crear los métodos para el CRUD en el controlador
+- '/movies'- getMovies - GET
+  - Este método usa el modelo para comunicarse con la BD Mongo.
+
+## Crear modelos con mongoose para que los usen los controladores
+1. Crear carpeta ```models``` y adentro el archivo ```MoviesCatalog.js```
+con el contenido necesario.
+  1. Importar mongoose
+  2. Definir el Schema (campos, sus tipos y restricciones)
+  3. Crear el modelo a partir del Schema.
+  4. exportar el modelo para que lo use el controlador.
+  
