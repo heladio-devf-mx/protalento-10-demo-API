@@ -80,3 +80,4 @@ con el contenido necesario.
 3. Hacer la conexión con la BD desde el server.
 4. Probar con el comando de ejecución de la aplicación ```npm run dev```
   Deberá imprimir el mensaje "Base de datos conectada exitosamente!" o similar... 
+5. Detener aplicación /servidor es con ```Ctrl + C```.
