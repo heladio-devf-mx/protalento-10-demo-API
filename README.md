@@ -95,8 +95,25 @@ con el contenido necesario.
 ## Crear modelos con mongoose para que los usen los controladores
 1. Crear carpeta ```models``` y adentro el archivo ```MoviesCatalog.js```
 con el contenido necesario.
+  Contenido del archivo:
   1. Importar mongoose
   2. Definir el Schema (campos, sus tipos y restricciones)
   3. Crear el modelo a partir del Schema.
   4. exportar el modelo para que lo use el controlador.
   
+## Cliclo para implementar el CRUD
+1. Creamos la ruta correspondiente y la configuramos con el middleware del controlador.
+2. Creamos el método en el controller para dicha ruta (middleware).
+3. Probamos el endpoint con algún cliente (Thunder, Postman, Insomnia...)
+
+## Crear middleware para valiar Auth de las peticiones (request)
+1. Crear carpeta ```middlewares``` y adentro el archivo ```AuthMiddleware.js```
+con el contenido necesario para validar el token y los permisos de la petición:
+2. Creamos el método para validar el token y que sea correcto.
+  4.1 Agregar el payload a la petición antes de pasar al siguiente middleware
+3. Creamos el método para validar los permisos
+4. Configurar el uso de estos middlewares en la ruta correspondiente.
+5. Probar con el cliente el envío de peticiones con encabezado de autorización y validar.
+
+## Gestión de usuarios para su registro
+
