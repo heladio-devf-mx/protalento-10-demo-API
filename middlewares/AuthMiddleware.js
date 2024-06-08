@@ -1,4 +1,5 @@
 const jwt = require("jsonwebtoken");
+const bcrypt = require("bcrypt");
 // Este middleware me ayudará a validar que venga un token y que es válido
 const validateToken = (req, res, next) => {
   // Obtener el encabezado Authorization: Bearer <token>
@@ -46,4 +47,21 @@ const validateRole = (req, res, next) => {
   next(); // avanzamos al siguiente paso de la petición (middleware)
 } 
 
-module.exports = { validateToken, validateRole };
+const encryptPassword = async (req, res, next) => {
+  const { password } = req.body;
+  try {
+    const encryptedPassword = await bcrypt.hash(password, 10);  // generamos una cadena a partir del password
+    // const user = await UserModel.create({ email, encryptPassword, role });
+    console.log('Middleware for encryption ', password, encryptedPassword);
+    req.encryptedPassword = encryptedPassword;
+    next();
+  } catch (error) {
+    console.log(error);
+    return res.status(500).send({
+      success: false,
+      message: 'Algo salió mal al encriptar el password.' // cambiar por algo más seguro
+    });
+  }
+}
+
+module.exports = { validateToken, validateRole, encryptPassword };
