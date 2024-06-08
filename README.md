@@ -119,5 +119,12 @@ con el contenido necesario para validar el token y los permisos de la petición:
 1. Modelo y su schema.
 2. Rutas para crear/registrar usuarios.
 2.1. Crear controlador para lógica de usuarios (crear, consultar editar, eliminar).
+2.1.2. Crear usuario.
 2.2. Crear el middleware para "encriptar" el password del usuario.
-3. Rutas para login.
+
+## Creación rutas para login
+1. Rutas para crear/registrar usuarios.
+2.1. Crear controlador para lógica de Auth (login).
+2.1.2. Implementar el método de login.
+3. Devolver el token en el response.
+

@@ -36,7 +36,7 @@ const validateToken = (req, res, next) => {
 
 const validateRole = (req, res, next) => {
   // Validar el rol del usuario (es la parte de la autorización)
-  console.log("Payload: ", { payload });
+  console.log("Payload: ", req.userPayload );
   if (req.userPayload.role !== "admin") { // usuario, operador
     return res.status(403).send({
       success: false,
