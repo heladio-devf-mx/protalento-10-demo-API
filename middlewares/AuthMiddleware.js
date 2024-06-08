@@ -23,7 +23,7 @@ const validateToken = (req, res, next) => {
     req.userPayload = payload;
     console.log("Payload: ", { payload });
 
-    next(); // avanzamos al siguirente paso de la petición
+    next(); // avanzamos al siguiente paso de la petición (middleware)
   } catch (error) {
     console.log("Error en la validación del Token: " + error.message);
     res.status(401).send({
@@ -33,4 +33,17 @@ const validateToken = (req, res, next) => {
   }
 }
 
-module.exports = { validateToken };
+const validateRole = (req, res, next) => {
+  // Validar el rol del usuario (es la parte de la autorización)
+  console.log("Payload: ", { payload });
+  if (req.userPayload.role !== "admin") { // usuario, operador
+    return res.status(403).send({
+      success: false,
+      message: 'Permisos insuficientes.'
+    });  // no autorizado
+  }
+
+  next(); // avanzamos al siguiente paso de la petición (middleware)
+} 
+
+module.exports = { validateToken, validateRole };
