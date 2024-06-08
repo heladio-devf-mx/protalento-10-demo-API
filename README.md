@@ -113,7 +113,8 @@ con el contenido necesario para validar el token y los permisos de la petición:
   4.1 Agregar el payload a la petición antes de pasar al siguiente middleware
 3. Creamos el método para validar los permisos
 4. Configurar el uso de estos middlewares en la ruta correspondiente.
-5. Probar con el cliente el envío de peticiones con encabezado de autorización y validar.
+5. Actualizar el server con la nueva ruta.
+6. Probar con el cliente el envío de peticiones con encabezado de autorización y validar.
 
 ## Gestión de usuarios para su registro
 1. Modelo y su schema.
@@ -121,10 +122,12 @@ con el contenido necesario para validar el token y los permisos de la petición:
 2.1. Crear controlador para lógica de usuarios (crear, consultar editar, eliminar).
 2.1.2. Crear usuario.
 2.2. Crear el middleware para "encriptar" el password del usuario.
+3. Actualizar el server con la nueva ruta.
 
 ## Creación rutas para login
 1. Rutas para crear/registrar usuarios.
 2.1. Crear controlador para lógica de Auth (login).
 2.1.2. Implementar el método de login.
 3. Devolver el token en el response.
+4. Actualizar el server con la nueva ruta.
 
