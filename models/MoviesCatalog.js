@@ -1,23 +1,30 @@
 // 1. Importar mongoose
 const mongoose = require("mongoose");
+const SchemaTypes = mongoose.SchemaTypes; // Typos de datos de mongoose
 
 // 2. Definir/Crear el Schema
 const moviesSchema = new mongoose.Schema({
   title: {
     type: String,
-    // required: true,
+    required: true,
   },
   overview:{
     type: String,
-    // required: true
+    required: true
+  },
+  popularity: {
+    type: SchemaTypes.Decimal128
+  },
+  vote_count: {
+    type: Number
   },
   release_date: {
     type: String,
-    // default: true
+    default: Date.now
   },
   poster_path: {
     type: String,
-    // default: true
+    default: '/placeholder.jpg'
   }
 });
 
