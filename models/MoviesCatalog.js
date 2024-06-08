@@ -7,6 +7,7 @@ const moviesSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
+    unique: true
   },
   overview:{
     type: String,
