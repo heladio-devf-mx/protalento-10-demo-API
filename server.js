@@ -1,7 +1,7 @@
 // 1. Llamar la biblioteca express y cors
 const express = require("express");
 const cors = require("cors");
-// 1.1 Importar dotenv para leer valriables de entorno
+// 1.1 Importar dotenv para leer variables de entorno
 const dotenv = require("dotenv");
 dotenv.config(); // Configurar dotenv
 // 1.3 Inportar la configuración de la BD
